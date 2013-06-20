@@ -1,0 +1,14 @@
+application: pacific-apex-218
+version: demo
+runtime: python27
+api_version: 1
+threadsafe: false
+
+libraries:
+- name: ssl
+  version: latest
+
+handlers:
+- url: /.*
+  script: helloworld.application
+
