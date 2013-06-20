@@ -1,10 +1,7 @@
 import webapp2
 
-from backlash import DebuggedApplication
-
 
 class MainPage(webapp2.RequestHandler):
-
     def get(self):
         raise Exception('test')
         self.response.headers['Content-Type'] = 'text/plain'
@@ -14,4 +11,6 @@ application = webapp2.WSGIApplication([
     ('/', MainPage),
 ], debug=True)
 
+
+from backlash import DebuggedApplication
 application = DebuggedApplication(application, evalex=True)
